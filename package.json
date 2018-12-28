@@ -4,6 +4,7 @@
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",
+    "executable-dll-plugin": "^1.0.4",
     "jquery": "^3.3.1",
     "react": "^16.3.1",
     "react-dom": "^16.3.1",

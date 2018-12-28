@@ -921,6 +921,11 @@ execa@^1.0.0:
     signal-exit "^3.0.0"
     strip-eof "^1.0.0"
 
+executable-dll-plugin@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/executable-dll-plugin/-/executable-dll-plugin-1.0.4.tgz#87da331a5462b15cdefa141c29a5f61186314ae4"
+  integrity sha512-C+X2VbEtZGU1/QV7x4y8Yzq3N2PGYAlZcnyXut3riaS+oOk2SS0IF2+fzXCgrGBmBHwG1A8AqI4NBrzUBw7hmA==
+
 expand-brackets@^2.1.4:
   version "2.1.4"
   resolved "https://registry.yarnpkg.com/expand-brackets/-/expand-brackets-2.1.4.tgz#b77735e315ce30f6b6eff0f83b04151a22449622"
