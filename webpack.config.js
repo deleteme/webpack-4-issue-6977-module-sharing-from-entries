@@ -3,52 +3,15 @@ const webpack = require("webpack");
 const ExecutableDllPlugin = require('executable-dll-plugin');
 
 
-/*
-module.exports = {
-  // mode: "development" || "production",
-  name: "app",
-  dependencies: ["environment", "vendor-react", "vendor-jquery"],
-  entry: {
-    pageA: "./pageA",
-    pageB: "./pageB",
-    pageC: "./pageC"
-  },
-  output: {
-    path: path.join(__dirname, "dist"),
-    filename: "[name].js"
-  },
-  plugins: [
-    new webpack.DllReferencePlugin({
-      context: path.join(__dirname, "dist"),
-      manifest: require("./dist/environment-manifest.json"), // eslint-disable-line
-    }),
-    new webpack.DllReferencePlugin({
-      context: path.join(__dirname, "dist"),
-      manifest: require("./dist/vendor-react-manifest.json"), // eslint-disable-line
-    }),
-    new webpack.DllReferencePlugin({
-      context: path.join(__dirname, "dist"),
-      manifest: require("./dist/vendor-jquery-manifest.json"), // eslint-disable-line
-    }),
-  ]
-};
-*/
-
 module.exports = [
   {
     name: "environment",
     // mode: "development || "production",
-    //entry: ["./vendor", "./vendor2"],
-    entry: ["babel-polyfill", "./utility2", "wtf"],
+    entry: ["babel-polyfill", "./utility2"],
     output: {
       path: path.resolve(__dirname, "dist"),
       filename: "environment.js",
       library: "environment_[hash]"
-    },
-    optimization: {
-      runtimeChunk: {
-        name: 'wtf'
-      }
     },
     plugins: [
       new webpack.DllPlugin({
@@ -61,7 +24,6 @@ module.exports = [
   {
     name: "vendor_react",
     // mode: "development || "production",
-    //entry: ["./vendor", "./vendor2"],
     entry: ["react", "react-dom"],
     output: {
       path: path.resolve(__dirname, "dist"),
@@ -78,7 +40,6 @@ module.exports = [
   {
     name: "vendor_jquery",
     // mode: "development || "production",
-    //entry: ["./vendor", "./vendor2"],
     entry: ["jquery", "./expose-jquery"],
     output: {
       path: path.resolve(__dirname, "dist"),
@@ -106,6 +67,11 @@ module.exports = [
     output: {
       path: path.join(__dirname, "dist"),
       filename: "[name].js"
+    },
+    optimization: {
+      runtimeChunk: {
+        name: 'webpack-runtime'
+      }
     },
     plugins: [
       new webpack.DllReferencePlugin({
