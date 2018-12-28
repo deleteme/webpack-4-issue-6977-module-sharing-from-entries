@@ -1,24 +1,24 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["pageA"],{
 
 /***/ "./node_modules/react-dom/index.js":
-/*!********************************************************************************************************!*\
-  !*** delegated ./node_modules/react-dom/index.js from dll-reference vendor_react_d5b4f8957ec975208c55 ***!
-  \********************************************************************************************************/
+/*!*************************************************************************************!*\
+  !*** delegated ./node_modules/react-dom/index.js from dll-reference __vendor_react ***!
+  \*************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("module.exports = (__webpack_require__(/*! dll-reference vendor_react_d5b4f8957ec975208c55 */ \"dll-reference vendor_react_d5b4f8957ec975208c55\"))(\"./node_modules/react-dom/index.js\");\n\n//# sourceURL=webpack:///delegated_./node_modules/react-dom/index.js_from_dll-reference_vendor_react_d5b4f8957ec975208c55?");
+module.exports = (__webpack_require__(/*! dll-reference __vendor_react */ "dll-reference __vendor_react"))("./node_modules/react-dom/index.js");
 
 /***/ }),
 
 /***/ "./node_modules/react/index.js":
-/*!****************************************************************************************************!*\
-  !*** delegated ./node_modules/react/index.js from dll-reference vendor_react_d5b4f8957ec975208c55 ***!
-  \****************************************************************************************************/
+/*!*********************************************************************************!*\
+  !*** delegated ./node_modules/react/index.js from dll-reference __vendor_react ***!
+  \*********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("module.exports = (__webpack_require__(/*! dll-reference vendor_react_d5b4f8957ec975208c55 */ \"dll-reference vendor_react_d5b4f8957ec975208c55\"))(\"./node_modules/react/index.js\");\n\n//# sourceURL=webpack:///delegated_./node_modules/react/index.js_from_dll-reference_vendor_react_d5b4f8957ec975208c55?");
+module.exports = (__webpack_require__(/*! dll-reference __vendor_react */ "dll-reference __vendor_react"))("./node_modules/react/index.js");
 
 /***/ }),
 
@@ -29,7 +29,14 @@ eval("module.exports = (__webpack_require__(/*! dll-reference vendor_react_d5b4f
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("var React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\nvar ReactDOM = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\nvar utility1 = __webpack_require__(/*! ./utility1 */ \"./utility1.js\");\nvar utility2 = __webpack_require__(/*! ./utility2 */ \"./utility2.js\");\nconsole.log('page a acquired react', React);\nconsole.log('page a acquired react-dom', ReactDOM);\n\nmodule.exports = \"pageA\";\n\n\n//# sourceURL=webpack:///./pageA.js?");
+var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+var ReactDOM = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+var utility1 = __webpack_require__(/*! ./utility1 */ "./utility1.js");
+var utility2 = __webpack_require__(/*! ./utility2 */ "./utility2.js");
+console.log('page a acquired react', React);
+console.log('page a acquired react-dom', ReactDOM);
+module.exports = "pageA";
+
 
 /***/ }),
 
@@ -40,40 +47,40 @@ eval("var React = __webpack_require__(/*! react */ \"./node_modules/react/index.
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("module.exports = \"utility1\";\n\n//# sourceURL=webpack:///./utility1.js?");
+module.exports = "utility1";
 
 /***/ }),
 
 /***/ "./utility2.js":
-/*!***********************************************************************************!*\
-  !*** delegated ./utility2.js from dll-reference environment_61e62c47f20ef6368281 ***!
-  \***********************************************************************************/
+/*!****************************************************************!*\
+  !*** delegated ./utility2.js from dll-reference __environment ***!
+  \****************************************************************/
 /*! exports provided: default */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("module.exports = (__webpack_require__(/*! dll-reference environment_61e62c47f20ef6368281 */ \"dll-reference environment_61e62c47f20ef6368281\"))(\"./utility2.js\");\n\n//# sourceURL=webpack:///delegated_./utility2.js_from_dll-reference_environment_61e62c47f20ef6368281?");
+module.exports = (__webpack_require__(/*! dll-reference __environment */ "dll-reference __environment"))("./utility2.js");
 
 /***/ }),
 
-/***/ "dll-reference environment_61e62c47f20ef6368281":
-/*!***************************************************!*\
-  !*** external "environment_61e62c47f20ef6368281" ***!
-  \***************************************************/
+/***/ "dll-reference __environment":
+/*!********************************!*\
+  !*** external "__environment" ***!
+  \********************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("module.exports = environment_61e62c47f20ef6368281;\n\n//# sourceURL=webpack:///external_%22environment_61e62c47f20ef6368281%22?");
+module.exports = __environment;
 
 /***/ }),
 
-/***/ "dll-reference vendor_react_d5b4f8957ec975208c55":
-/*!****************************************************!*\
-  !*** external "vendor_react_d5b4f8957ec975208c55" ***!
-  \****************************************************/
+/***/ "dll-reference __vendor_react":
+/*!*********************************!*\
+  !*** external "__vendor_react" ***!
+  \*********************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("module.exports = vendor_react_d5b4f8957ec975208c55;\n\n//# sourceURL=webpack:///external_%22vendor_react_d5b4f8957ec975208c55%22?");
+module.exports = __vendor_react;
 
 /***/ })
 

@@ -1,64 +1,49 @@
 const path = require("path");
 const webpack = require("webpack");
-const ExecutableDllPlugin = require('executable-dll-plugin');
+const ExecutableDllPlugin = require("executable-dll-plugin");
 
-
-module.exports = [
+const sharedEntries = [
   {
     name: "environment",
-    // mode: "development || "production",
     entry: ["babel-polyfill", "./utility2"],
-    output: {
-      path: path.resolve(__dirname, "dist"),
-      filename: "environment.js",
-      library: "environment_[hash]"
-    },
-    plugins: [
-      new webpack.DllPlugin({
-        name: "environment_[hash]",
-        path: path.resolve(__dirname, "dist/environment-manifest.json")
-      }),
-      new ExecutableDllPlugin()
-    ]
+    shouldExecute: true,
+    manifestPath: path.resolve(__dirname, "dist/environment_manifest.json")
   },
   {
     name: "vendor_react",
-    // mode: "development || "production",
     entry: ["react", "react-dom"],
-    output: {
-      path: path.resolve(__dirname, "dist"),
-      filename: "vendor-react.js",
-      library: "vendor_react_[hash]"
-    },
-    plugins: [
-      new webpack.DllPlugin({
-        name: "vendor_react_[hash]",
-        path: path.resolve(__dirname, "dist/vendor-react-manifest.json")
-      })
-    ]
+    shouldExecute: false,
+    manifestPath: path.resolve(__dirname, "dist/vendor_react_manifest.json")
   },
   {
     name: "vendor_jquery",
-    // mode: "development || "production",
     entry: ["jquery", "./expose-jquery"],
-    output: {
-      path: path.resolve(__dirname, "dist"),
-      filename: "vendor-jquery.js",
-      library: "vendor_jquery_[hash]"
-    },
-    plugins: [
-      new webpack.DllPlugin({
-        name: "vendor_jquery_[hash]",
-        path: path.resolve(__dirname, "dist/vendor-jquery-manifest.json")
-      }),
-      new ExecutableDllPlugin()
-    ]
-  },
+    shouldExecute: true,
+    manifestPath: path.resolve(__dirname, "dist/vendor_jquery_manifest.json")
+  }
+];
 
+module.exports = [
+  ...sharedEntries.map(({ name, entry, shouldExecute, manifestPath }) => {
+    const windowGlobalName = `__${name}`;
+    return {
+      name,
+      entry,
+      output: {
+        path: path.resolve(__dirname, "dist"),
+        filename: `${name}.js`,
+        library: windowGlobalName
+      },
+      plugins: [
+        new webpack.DllPlugin({ name: windowGlobalName, path: manifestPath }),
+        shouldExecute && new ExecutableDllPlugin()
+      ].filter(Boolean)
+    };
+  }),
   {
     name: "app",
-    // mode: "development || "production",
-    dependencies: ["environment", "vendor_react", "vendor_jquery"],
+    devtool: false,
+    dependencies: [...sharedEntries.map(e => e.name)],
     entry: {
       pageA: "./pageA",
       pageB: "./pageB",
@@ -69,20 +54,15 @@ module.exports = [
       filename: "[name].js"
     },
     optimization: {
+      minimize: false,
       runtimeChunk: {
-        name: 'webpack-runtime'
+        name: "webpack-runtime"
       }
     },
     plugins: [
-      new webpack.DllReferencePlugin({
-        manifest: path.resolve(__dirname, "dist/environment-manifest.json")
-      }),
-      new webpack.DllReferencePlugin({
-        manifest: path.resolve(__dirname, "dist/vendor-react-manifest.json")
-      }),
-      new webpack.DllReferencePlugin({
-        manifest: path.resolve(__dirname, "dist/vendor-jquery-manifest.json")
-      }),
+      ...sharedEntries.map(({ manifestPath }) => {
+        return new webpack.DllReferencePlugin({ manifest: manifestPath });
+      })
     ]
   }
 ];

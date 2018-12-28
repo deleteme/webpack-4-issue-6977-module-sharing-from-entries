@@ -1,13 +1,13 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["pageB"],{
 
 /***/ "./node_modules/jquery/dist/jquery.js":
-/*!************************************************************************************************************!*\
-  !*** delegated ./node_modules/jquery/dist/jquery.js from dll-reference vendor_jquery_97f392796e409b36857c ***!
-  \************************************************************************************************************/
+/*!*****************************************************************************************!*\
+  !*** delegated ./node_modules/jquery/dist/jquery.js from dll-reference __vendor_jquery ***!
+  \*****************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("module.exports = (__webpack_require__(/*! dll-reference vendor_jquery_97f392796e409b36857c */ \"dll-reference vendor_jquery_97f392796e409b36857c\"))(\"./node_modules/jquery/dist/jquery.js\");\n\n//# sourceURL=webpack:///delegated_./node_modules/jquery/dist/jquery.js_from_dll-reference_vendor_jquery_97f392796e409b36857c?");
+module.exports = (__webpack_require__(/*! dll-reference __vendor_jquery */ "dll-reference __vendor_jquery"))("./node_modules/jquery/dist/jquery.js");
 
 /***/ }),
 
@@ -18,18 +18,23 @@ eval("module.exports = (__webpack_require__(/*! dll-reference vendor_jquery_97f3
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("var $ = __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\");\nvar utility2 = __webpack_require__(/*! ./utility2 */ \"./utility2.js\");\nvar utility3 = __webpack_require__(/*! ./utility3 */ \"./utility3.js\");\n\nmodule.exports = \"pageB\";\n\n\n//# sourceURL=webpack:///./pageB.js?");
+var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+var utility2 = __webpack_require__(/*! ./utility2 */ "./utility2.js");
+var utility3 = __webpack_require__(/*! ./utility3 */ "./utility3.js");
+
+module.exports = "pageB";
+
 
 /***/ }),
 
 /***/ "./utility2.js":
-/*!***********************************************************************************!*\
-  !*** delegated ./utility2.js from dll-reference environment_61e62c47f20ef6368281 ***!
-  \***********************************************************************************/
+/*!****************************************************************!*\
+  !*** delegated ./utility2.js from dll-reference __environment ***!
+  \****************************************************************/
 /*! exports provided: default */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("module.exports = (__webpack_require__(/*! dll-reference environment_61e62c47f20ef6368281 */ \"dll-reference environment_61e62c47f20ef6368281\"))(\"./utility2.js\");\n\n//# sourceURL=webpack:///delegated_./utility2.js_from_dll-reference_environment_61e62c47f20ef6368281?");
+module.exports = (__webpack_require__(/*! dll-reference __environment */ "dll-reference __environment"))("./utility2.js");
 
 /***/ }),
 
@@ -40,29 +45,29 @@ eval("module.exports = (__webpack_require__(/*! dll-reference environment_61e62c
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("module.exports = \"utility3\";\n\n//# sourceURL=webpack:///./utility3.js?");
+module.exports = "utility3";
 
 /***/ }),
 
-/***/ "dll-reference environment_61e62c47f20ef6368281":
-/*!***************************************************!*\
-  !*** external "environment_61e62c47f20ef6368281" ***!
-  \***************************************************/
+/***/ "dll-reference __environment":
+/*!********************************!*\
+  !*** external "__environment" ***!
+  \********************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("module.exports = environment_61e62c47f20ef6368281;\n\n//# sourceURL=webpack:///external_%22environment_61e62c47f20ef6368281%22?");
+module.exports = __environment;
 
 /***/ }),
 
-/***/ "dll-reference vendor_jquery_97f392796e409b36857c":
-/*!*****************************************************!*\
-  !*** external "vendor_jquery_97f392796e409b36857c" ***!
-  \*****************************************************/
+/***/ "dll-reference __vendor_jquery":
+/*!**********************************!*\
+  !*** external "__vendor_jquery" ***!
+  \**********************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("module.exports = vendor_jquery_97f392796e409b36857c;\n\n//# sourceURL=webpack:///external_%22vendor_jquery_97f392796e409b36857c%22?");
+module.exports = __vendor_jquery;
 
 /***/ })
 

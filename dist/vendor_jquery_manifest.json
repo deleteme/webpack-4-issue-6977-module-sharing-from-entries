@@ -1,0 +1,1 @@
+{"name":"__vendor_jquery","content":{"./expose-jquery.js":{"id":"./expose-jquery.js","buildMeta":{"exportsType":"namespace","providedExports":[]}},"./node_modules/jquery/dist/jquery.js":{"id":"./node_modules/jquery/dist/jquery.js","buildMeta":{"providedExports":true}}}}
